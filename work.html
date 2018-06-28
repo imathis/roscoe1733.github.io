@@ -1,77 +1,21 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Clover Bloom Productions - Client Work</title>
-    <link rel="stylesheet" href="/assets/style.css" type="text/css">
-    <meta content="True" name="HandheldFriendly">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  </head>
-  <body>
-    <main>
-      <header>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/work.html">Work</a>
-          <a href="/projects.html">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="title">
-          <h4>Clover Bloom Productions</h4>
-          <h1>Client Work</h1>
-          <p><a class="button" href="#contact">Get In Touch</a></p>
-        </div>
-      </header>
-      <section class="theater">
-        <div class="video-group">
-          <div class="video-embed"></div>
-          <div class="video-thumbs grid small-gutter">
-            <a href="#" data-video="255671186"><img src="/images/ghana.jpg"></a>
-            <a href="#" data-video="255669136"><img src="/images/patterson-uti.jpg"></a>
-            <a href="#" data-video="255924085"><img src="/images/desotocaverns.jpg"></a>
-            <a href="#" data-video="255927494"><img src="/images/blossom-time.jpg"></a>
-            <a href="#" data-video="255936060"><img src="/images/banjo.jpg"></a>
-            <a href="#" data-video="255923831"><img src="/images/cave-christmas.jpg"></a>
-            <a href="#" data-video="258137923"><img src="/images/cave-july-4.jpg"></a>
-            <a href="#" data-video="255929072"><img src="/images/dairy-boy.jpg"></a>
-            <a href="#" data-video="257191192"><img src="/images/cave-legacy.jpg"></a>
-            <a href="#" data-video="255918075"><img src="/images/wedding.jpg"></a>
-            <a href="#" data-video="257193420"><img src="/images/cave-ad.jpg"></a>
-            <a href="#" data-video="258130617"><img src="/images/indy.jpg"></a>
-            <a href="#" data-video="258133137"><img src="/images/joychristmas.jpg"></a>
-            <a href="#" data-video="258136544"><img src="/images/sids.jpg"></a>
-            <a href="#" data-video="258138189"><img src="/images/keegan.jpg"></a>
-            <a href="#" data-video="258138429"><img src="/images/steelcity.jpg"></a>
-            <a href="#" data-video="258187005"><img src="/images/coffee.jpg"></a>
-            <a href="#" data-video="258189653"><img src="/images/rogermiller.jpg"></a>
-            <a href="#" data-video="259187188"><img src="/images/stevemartin.jpg"></a>
-            <a href="#" data-video="259176358"><img src="/images/bednbreakfast.jpg"></a>
-            <a href="#" data-video="259189485"><img src="/images/manhattan.jpg"></a>
-            <a href="#" data-video="259189298"><img src="/images/krispykreme.jpg"></a>
-            <a href="#" data-video="259177304"><img src="/images/nachitos.jpg"></a>
-            <a href="#" data-video="259190707"><img src="/images/junkarddiva.jpg"></a>
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="contact">
-        <div class="two-of-five">
-          <form id="contact" action="https://formspree.io/marcusross@cloverbloomproductions.com" method="POST">
-            <h3>Contact Marcus</h3>
-            <p><input required id="name" name="name" type="text" placeholder="Name"></p>
-            <p><input required id="email" name="email" type="text" placeholder="Email Address"></p>
-            <p><textarea required id="message" name="message" placeholder="Message"></textarea></p>
-            <input type="hidden" name="_subject" value="Clover Bloom Productions" />
-            <input type="hidden" name="_next" value="//cloverbloomproductions.com/thanks.html" />
-            <input type="text" id="gotcha" name="_gotcha" style="display:none" />
-            <input type="hidden" name="_format" value="plain">
-            <p class='button-row'><button type="submit">Send Message</button></p>
-          </form>
-        </div>
-      </section>
-      <footer>
-        <p>Copyright © 2018 <i class="logo"></i> Clover Bloom Productions<p>
-      </footer>
-    </main>
-  </body>
-  <script src="/assets/site.js"></script>
-</html>
+---
+call_to_action: Get In Touch
+call_to_action_url: '#contact'
+title: Client Work
+layout: default
+---
+
+<section class="theater">
+  <div class="video-group">
+    <div class="video-embed"></div>
+    <div class="video-thumbs grid small-gutter">
+      {% for video in site.data.work %}
+        <a href="#" data-video="{{ video.code }}"><img src="/images/{{ video.image }}"></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="two-of-five">{% include contact.html %}</div>
+</section>

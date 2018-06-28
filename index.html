@@ -1,62 +1,27 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Clover Bloom Productions</title>
-    <link rel="stylesheet" href="/assets/style.css" type="text/css">
-    <meta content="True" name="HandheldFriendly">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  </head>
-  <body>
-    <main>
-      <header>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/work.html">Work</a>
-          <a href="/projects.html">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="title">
-          <h1>Clover Bloom Productions</h1>
-        </div>
-      </header>
-      <section class="theater">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/257014825" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-      </section>
-      <section>
-        <div class="card">
-          <div class="grid">
-            <figure class="portrait one-of-two"><img src="/images/marcus.jpg"></figure>
-            <article class="one-of-two">
-              <h2>Marcus Ross</h2>
-              <p class="meta-list"><span>Writer</span> <span>Director</span> <span>Cinematographer</span> <span>Gimbal Operator</span> <span>Editor</span></p>
-              <hr>
-              <p class="stand-out">A five time Emmy-winning writer and director from Oklahoma.</p>
-              <p>Marcus is the owner of Clover Bloom Productions. He just co-produced his first feature film “The Vast of Night.” He wrote, directed, and produced the television comedy pilot “Lazy Circles” in his small hometown of Minco, Oklahoma. “Lazy Circles” is currently making the festival rounds, already winning multiple festival awards.</p>
-              <p>Marcus graduated with a bachelors degree in Corporate Media from Oklahoma Christian University and studied film at the Los Angeles Film Studies Center.</p>
-              <p class='button-row'><a class="button" href="/work.html">See Client Work</a></p>
-              <hr>
-              <form id="contact" action="https://formspree.io/marcusross@cloverbloomproductions.com" method="POST">
-                <h3>Contact Marcus</h3>
-                <p><input required id="name" name="name" type="text" placeholder="Name"></p>
-                <p><input required id="email" name="email" type="text" placeholder="Email Address"></p>
-                <p><textarea required id="message" name="message" placeholder="Message"></textarea></p>
-                <input type="hidden" name="_subject" value="Clover Bloom Productions" />
-                <input type="hidden" name="_next" value="//cloverbloomproductions.com/thanks.html" />
-                <input type="text" id="gotcha" name="_gotcha" style="display:none" />
-                <input type="hidden" name="_format" value="plain">
-                <p class='button-row'><button type="submit">Send Message</button></p>
-              </form>
-            </article>
-          </div>
-        </div>
-      </section>
-      <footer>
-        <p>Copyright © 2018 <i class="logo"></i> Clover Bloom Productions<p>
-      </footer>
-    </main>
-  </body>
-  <script src="/assets/site.js"></script>
-</html>
+---
+layout: default
+---
+<section class="theater">
+  <div class="video-embed">
+    {% include video.html id="257014825" %}
+  </div>
+</section>
+
+<section>
+<div class="card">
+  <div class="grid">
+    <figure class="portrait one-of-two"><img src="/images/marcus.jpg"></figure>
+    <article class="one-of-two">
+      <h2>Marcus Ross</h2>
+      <p class="meta-list"><span>Writer</span> <span>Director</span> <span>Cinematographer</span> <span>Gimbal Operator</span> <span>Editor</span></p>
+      <hr>
+      <p class="stand-out">A five time Emmy-winning writer and director from Oklahoma.</p>
+      <p>Marcus is the owner of Clover Bloom Productions. He just co-produced his first feature film “The Vast of Night.” He wrote, directed, and produced the television comedy pilot “Lazy Circles” in his small hometown of Minco, Oklahoma. “Lazy Circles” is currently making the festival rounds, already winning multiple festival awards.</p>
+      <p>Marcus graduated with a bachelors degree in Corporate Media from Oklahoma Christian University and studied film at the Los Angeles Film Studies Center.</p>
+      <p class='button-row'><a class="button" href="/work.html">See Client Work</a></p>
+      <hr>
+      {% include contact.html %}
+    </article>
+  </div>
+</div>
+</section>

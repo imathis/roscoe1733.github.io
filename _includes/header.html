@@ -1,0 +1,13 @@
+<header class="{{ page.header_class }}"><div class="title">
+  {% include nav.html %}
+  {% assign main_title = page.main_title || site.title %}
+  {% if page.title %}
+    <h4>{{ main_title }}</h4>
+    <h1>{% assign display_title = page.display_title || page.title %}{{ display_title }}</h1>
+    {% if page.call_to_action %}
+      <p><a class="button" href="{{ page.call_to_action_url }}">{{ page.call_to_action }}</a></p>
+    {% endif %}
+  {% else %}
+    <h1>{{ main_title }}</h1>
+  {% endif %}
+</div></header>
